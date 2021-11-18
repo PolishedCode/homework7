@@ -334,6 +334,18 @@ function createRecipe() {
   console.log("Description: ", recipeDescription);
   console.log("Time: ", recipeTime);
   console.log("Serving: ", recipeServing);
+  
+   bookContainer.innerHTML += `
+        <div id=book-${book.id}>
+          <h2>${book.title}</h2>
+          <h4>Author: ${book.author}</h4>
+          <img src="${book.coverImage}" width="333" height="500">
+          <p>${book.description}</p>
+          <button data-id=${book.id} id="edit-${book.id}" data-action="edit">Edit</button>
+          <button data-id=${book.id} id="delete-${book.id}" data-action="delete">Delete</button>
+        </div>
+        <div id=edit-book-${book.id}>
+        </div>`
 }
 
 function editRecipe() {
